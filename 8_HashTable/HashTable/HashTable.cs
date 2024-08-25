@@ -25,7 +25,7 @@ namespace AlgorithmsDataStructures
 
       int sum = 0;
       foreach (char character in value)
-        sum += character / 10;
+        sum += character * 31;
 
       return sum % size;
     }

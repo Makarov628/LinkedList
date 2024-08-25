@@ -13,7 +13,7 @@ public class HashTableTests
     public void SeekSlot_Normal()
     {
         HashTable hashTable = new HashTable(19, 3);
-        Assert.AreEqual(10, hashTable.SeekSlot("Magenta"));
+        Assert.AreEqual(14, hashTable.SeekSlot("Magenta"));
     }
 
     [Test]
@@ -21,7 +21,7 @@ public class HashTableTests
     {
         HashTable hashTable = new HashTable(19, 3);
         hashTable.slots[10] = "Magenta";
-        Assert.AreEqual(13, hashTable.SeekSlot("Magenta"));
+        Assert.AreEqual(14, hashTable.SeekSlot("Magenta"));
     }
 
     [Test]
@@ -31,7 +31,7 @@ public class HashTableTests
         hashTable.slots[10] = "Magenta";
         hashTable.slots[13] = "Magenta";
         hashTable.slots[16] = "Magenta";
-        Assert.AreEqual(0, hashTable.SeekSlot("Magenta"));
+        Assert.AreEqual(14, hashTable.SeekSlot("Magenta"));
     }
 
     [Test]
@@ -60,7 +60,7 @@ public class HashTableTests
     public void Put_Normal()
     {
         HashTable hashTable = new HashTable(19, 3);
-        Assert.AreEqual(10, hashTable.Put("Magenta"));
+        Assert.AreEqual(14, hashTable.Put("Magenta"));
     }
 
     [Test]
@@ -69,7 +69,7 @@ public class HashTableTests
         HashTable hashTable = new HashTable(19, 3);
         hashTable.Put("Magenta");
         hashTable.Put("Magenta");
-        Assert.AreEqual(16, hashTable.Put("Magenta"));
+        Assert.AreEqual(1, hashTable.Put("Magenta"));
     }
 
     [Test]
@@ -79,7 +79,7 @@ public class HashTableTests
         hashTable.Put("Magenta");
         hashTable.Put("Magenta");
         hashTable.Put("Magenta");
-        Assert.AreEqual(0, hashTable.Put("Magenta"));
+        Assert.AreEqual(4, hashTable.Put("Magenta"));
     }
 
     [Test]
@@ -101,7 +101,7 @@ public class HashTableTests
         {
             if (i != 7) hashTable.slots[i] = "Magenta";
         }
-        Assert.AreEqual(-1, hashTable.Put("Magenta"));
+        Assert.AreEqual(7, hashTable.Put("Magenta"));
     }
 
     [Test]
@@ -109,7 +109,7 @@ public class HashTableTests
     {
         HashTable hashTable = new HashTable(19, 3);
         hashTable.Put("Magenta");
-        Assert.AreEqual(10, hashTable.Find("Magenta"));
+        Assert.AreEqual(14, hashTable.Find("Magenta"));
     }
 
     [Test]
